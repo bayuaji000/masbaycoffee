@@ -51,27 +51,6 @@ window.addEventListener("scroll", () => {
   } else {
     scrollUpBtn.classList.remove("scrollUpBtn-active");
   }
-
-  // Nav link indicator
-  const sections = document.querySelectorAll("section[id]");
-  sections.forEach((section) => {
-    const sectionHeight = section.offsetHeight,
-      sectionTop = section.offsetTop - 100;
-
-    let navId = document.querySelector(
-      `.menu-content a[href='#${section.id}']`
-    );
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      navId.classList.add("active-navlink");
-    } else {
-      navId.classList.remove("active-navlink");
-    }
-
-    navId.addEventListener("click", () => {
-      navMenu.classList.remove("open");
-      body.style.overflowY = "scroll";
-    });
-  });
 });
 
 // Scroll Reveal Animation
